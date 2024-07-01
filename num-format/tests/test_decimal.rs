@@ -34,6 +34,36 @@ fn test_decimal() {
             Decimal::from_str_exact("1.2340").unwrap(),
             &POLICIES[4],
         ),
+        ("555", Decimal::from_str_exact("555").unwrap(), &POLICIES[0]),
+        ("555", Decimal::from_str_exact("555").unwrap(), &POLICIES[1]),
+        ("555", Decimal::from_str_exact("555").unwrap(), &POLICIES[2]),
+        ("555", Decimal::from_str_exact("555").unwrap(), &POLICIES[3]),
+        ("555", Decimal::from_str_exact("555").unwrap(), &POLICIES[4]),
+        (
+            "222.000",
+            Decimal::from_str_exact("222.000").unwrap(),
+            &POLICIES[0],
+        ),
+        (
+            "222.000",
+            Decimal::from_str_exact("222.000").unwrap(),
+            &POLICIES[1],
+        ),
+        (
+            "222.000",
+            Decimal::from_str_exact("222.000").unwrap(),
+            &POLICIES[2],
+        ),
+        (
+            "222.000",
+            Decimal::from_str_exact("222.000").unwrap(),
+            &POLICIES[3],
+        ),
+        (
+            "222.000",
+            Decimal::from_str_exact("222.000").unwrap(),
+            &POLICIES[4],
+        ),
         (
             "-1.2340",
             Decimal::from_str_exact("-1.2340").unwrap(),

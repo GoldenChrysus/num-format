@@ -29,7 +29,7 @@ impl ToFormattedStr for Decimal {
         let mut aux_size: usize = 0;
 
         if scale != 0 {
-            let decimal = decimal.to_string();
+            let decimal = format!("{:0<1$}", decimal, scale as usize);
             let decimal = decimal.as_str();
             let decimal_len = decimal.len();
 
