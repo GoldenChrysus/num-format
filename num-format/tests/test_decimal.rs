@@ -1,10 +1,18 @@
 #![cfg(feature = "with-decimal")]
 mod common;
 
-use num_format::{CustomFormat, ToFormattedString, WriteFormatted};
+use num_format::{CustomFormat, Locale, ToFormattedString, WriteFormatted};
 use rust_decimal::Decimal;
 
 use crate::common::POLICIES;
+
+#[test]
+fn test_found_cases() {
+    let x = Decimal::from_str_exact("14.98").unwrap();
+    let format = Locale::en;
+
+    assert_eq!(x.to_formatted_string(&format), "14.98");
+}
 
 #[test]
 fn test_decimal() {

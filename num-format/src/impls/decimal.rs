@@ -15,14 +15,14 @@ impl ToFormattedStr for Decimal {
     where
         F: Format,
     {
-        let integral = self.round().normalize();
+        let integral = self.trunc().normalize();
         let scale = self.scale();
         let decimal = ((self - integral) * Decimal::TEN.powu(scale as u64))
             .round()
             .abs()
             .normalize();
         let integral = self
-            .round()
+            .trunc()
             .normalize()
             .to_i128()
             .expect("Improper integral.");
